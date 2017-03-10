@@ -1,0 +1,71 @@
+Explain the working of below pig script commands with an example :
+1.LOAD:
+To load the data either from local filesystem or Hadoop filesystem.
+Syntax:
+LOAD ‘path_of_data’ [USING function] [AS schema];
+Where;
+path_of_data : file/directory name in single quotes.
+USING : is the keyword.
+function : If you choose to omit this, default load function PigStorage() is used.
+AS : is the keyword
+schema : schema of your data along with data type.
+
+2.STORE
+Stores and saves the data into a filesystem.
+Syntax:
+STORE alias INTO ‘directory’ [USING function]
+Where;
+STORE : is a keyword
+alias : is the relation which you want to store.
+INTO : is the keyword
+directory : name of directory where you want to store your result.
+
+3.DUMP
+To display output dump is used.
+
+4.FOREACH
+It generates data transformations based on desired columns of data.
+Syntax:
+alias = FOREACH alias GENERATE {expression | field};
+Where;
+alias : is the relation
+FOREACH : is the keyword
+GENERATE : is the keyword
+
+5.FILTER
+Filters a relation based on certain condition.
+Syntax:
+alias = FILTER alias BY expression;
+Where;
+alias : is the relation
+FILTER : is the keyword
+BY : is the keyword
+expression : condition on which filter will be performed.
+
+6. GROUP BY
+Groups the data based on one or multiple fields. It groups together tuples that have the same group key (key field). 
+The key field will be a tuple if the group key has more than one field, otherwise it will be the same type as that of the group key.
+Syntax:
+alias = GROUP alias {ALL | BY field};
+Where;
+alias : is the relation
+GROUP : is the keyword
+ALL : keyword. Use ALL if you want all tuples to go to a single group
+BY : keyword
+Field : field name on which you want to group your data.
+
+7.ORDER BY
+Sorts a relation based on single or multiple fields.
+Syntax:
+alias = ORDER alias BY {field_name [ASC | DESC]
+Where;
+alias : is the relation
+ORDER : is the keyword.
+BY : is the keyword.
+field_name : column on which you want to sort the relation.
+ASC : sort in ascending order
+DESC : sort in descending order.
+
+8.DESCRIBE
+Column name and data types are displayed ,in other words structure of data is described.
+
